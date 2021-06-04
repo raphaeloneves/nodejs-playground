@@ -11,7 +11,6 @@ const hbs = require("hbs");
 
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
-const { report } = require("process");
 
 // initializing Express
 
@@ -79,4 +78,7 @@ app.get("*", (req, res) => {
 
 // server execution
 
-app.listen(3000);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log("Server initialized on port " + port);
+});

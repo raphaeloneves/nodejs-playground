@@ -20,7 +20,7 @@ forecastForm.addEventListener("submit", (event) => {
 });
 
 const getForecast = (location, callback) => {
-  fetch(`http://localhost:3000/forecast?address=${encodeURIComponent(location)}`).then(
+  fetch(`/forecast?address=${encodeURIComponent(location)}`).then(
     (response) => {
       response.json().then((data) => {
         callback(data);
